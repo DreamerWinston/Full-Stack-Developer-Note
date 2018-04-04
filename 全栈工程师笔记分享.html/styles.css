@@ -1,0 +1,522 @@
+
+html {
+    overflow-y: scroll;
+}
+
+body#wholeDocument {
+    -webkit-text-size-adjust:none; 
+    font-family: Helvetica, sans-serif; 
+    font-size: 12px;
+color: rgb(119,141,149);
+    font-family: "Avenir", sans-serif; 
+    font-weight: 500;
+    font-size: 14px;
+    background-color: rgb(253,247,232);
+    
+}
+/* height hack to make nested divs set to 100% height work in Chrome and Firefox */
+table.whole-row, table.whole-note, table#column-header {
+    height: 1px;
+}
+table {
+    border-collapse: collapse;
+}
+div {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 13px;
+}
+div#centered, .temp {
+    display: block;
+    text-align: center;
+}
+div#centered > table, div.temp-wrapper {
+    margin: 0 auto;
+    text-align: left;
+}
+tr.outline-row > td > div, table.note-table {
+    display: inline-table;
+}
+tr.outline-row > td > div > div, tr.outline-row > td div.note-icon, tr.note-row > td > div, table.outline-column div, table.note-table div  {
+    display: inline-table;
+}
+div.column, div.note-filler > div {
+    display: inline-block; 
+}
+tr#header div {
+    display: inline-block;
+}
+div.pdf-div {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+object.pdf-object {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
+iframe.pdf-iframe {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+td,th {
+    padding: 0px;
+    empty-cells: show;
+}
+div.force-wrap {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+tr#header {
+
+        border-bottom: 1px solid rgba(0,0,0,0.25);
+    
+}
+/* This is the table used for just the outline column/note column and is nested in the cell for the outline column of the row */
+table.outline-column td, table.outline-column-note td {
+    border-bottom: 0px;
+    border-left: 0px;
+}
+tr.outline-row > td, tr.note-row > td  {
+    height: inherit;
+}
+table.outline-column, tr.outline-row td, tr.note-row td, div.outline-column-div, div.note-filler, tr#header td, tr#header > td > div, div.note-outline-column-div {
+    height: 100%;
+}
+@media all and (-ms-high-contrast:none) {
+    /* Target IE */
+    div#centered tr.outline-row > td, div#centered tr.note-row > td, div#centered tr#header td  {
+        height: 5px;
+    }
+}
+@supports (-ms-accelerator:true) {
+    /* Target MS Edge */
+    div#centered tr.outline-row > td, div#centered tr.note-row > td, div#centered tr#header td  {
+        height: 5px;
+    }
+}
+tr#header div, table.outline-column, table.note-table {
+    width: 100%;
+}
+.handle {
+    white-space: nowrap;
+    text-align:right;
+    vertical-align: baseline;
+}
+td.label {
+    text-align: right;
+    white-space: nowrap;
+}
+td.label, .column {
+    vertical-align: baseline;
+}
+tr.note-row td.label {
+    /* Same row label is put in invisibly the note to keep alignment but,
+    if it's a large font size, this will cause the note to be taller
+    than it should be. This works around that */
+    line-height: 0;
+}
+div.white-space {
+    white-space: pre-wrap;
+}
+
+
+/********* START ********
+Grid lines
+*************************/
+tr#header td > div {
+
+}
+div.note-div, div.note-filler, div.outline-column-div, tr.outline-row > td:not(.column) > div.fill-cell, div.note-outline-column-div, tr.outline-row > td:nth-of-type(1) > div  {
+    
+}
+
+
+table#column-header {
+
+}
+table#column-header ~ table.whole-row:first-of-type {
+    border-top: none;
+}
+tr.outline-row > td:last-of-type:not(.column) > div.fill-cell, tr.note-row > td:last-of-type:not(.note) > div.note-filler, tr#header td:last-of-type > div {
+
+}
+/* END grid lines */
+
+table.outline-column-note {
+    width: 100%;
+    height: 100%;
+}
+.fill-cell {
+    height: 100%;
+    width: 100%;
+}
+
+.summary_node {
+    background: rgba(0,0,0,.12);
+}
+    
+/* To make checkbox columns always centered */
+div#centered div.checkbox {
+    text-align: center;
+}
+
+table.outline-column td:not(:last-of-type) {
+
+}
+
+/********* START ********
+Expand/collapse
+*************************/
+.visible {
+
+}
+.hidden {
+    display: none;
+}
+.temp {
+    min-height: 0px;
+}
+/* END expand/collapse */
+
+div.note-outline-column-div table {
+    vertical-align: top;
+}
+
+td.empty {
+    display: none;
+}
+
+
+/********* START ********
+Image handle styles
+*************************/
+td.note {
+    vertical-align: baseline;
+}
+div.handle img {
+    vertical-align: middle;
+}
+div.note-icon {
+    text-align: center;
+}
+img.status {
+    height: 13px;
+    width: 13px;
+    position: relative;
+    bottom: 1px;
+    top: 0px;
+}
+img.checkbox-column {
+    height: 13px;
+    width: 13px;
+    vertical-align: middle;
+}
+img.leaf {
+    height: 5px;
+    width: 5px;
+    position: relative;
+    top: -1px;
+}
+img.parent {
+    height: 9px;
+    width: 9px;
+}
+img.note-icon {
+    height: 13px;
+    width: 13px;
+    position: relative;
+    vertical-align: middle;
+}
+
+/* END image handle styles */
+
+
+/********* START ********
+Padding values
+*************************/
+
+/* Column text */
+table.outline-column td:nth-of-type(4), div.column, tr#header div > div > div  {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+table.outline-column td:nth-of-type(4), div.column, div.note-icon  {
+    padding-bottom: 5px;
+    padding-top: 4px;
+}
+/* When a note is expanded, the row it belongs to doesn't have bottom row padding, that padding goes to the bottom of the note */
+table.note-expanded table.outline-column td:nth-of-type(4), table.note-expanded div.column, table.note-expanded div.note-icon {
+    padding-bottom: 0px;
+}
+/* last-child class is set by JS */
+tr.last-child table.outline-column td:nth-of-type(4), tr.last-child div.column, tr.last-child div.note-icon {
+    padding-bottom: 5px;
+}
+/* Note text */
+table.note-table td:nth-of-type(4) {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-top: 0px;
+    padding-bottom: 5px;
+}
+table.note-table {
+    margin-top: 0px;
+}
+/* Set above children padding */
+tr[data-state="expanded"][data-has-children="1"] table.outline-column td:nth-of-type(4), tr[data-state="expanded"][data-has-children="1"] div.column {
+    padding-bottom: 5px;
+}
+/* When there are children and note is expanded, don't set above children padding on the row, it goes to the note */
+tr[data-state="expanded"][data-has-children="1"].note-expanded table.outline-column td:nth-of-type(4), tr[data-state="expanded"][data-has-children="1"].note-expanded div.column, tr[data-state="expanded"][data-has-children="1"].note-expanded div.note-icon {
+    padding-bottom: 0px;
+}
+/* Set above children padding on the note when it is visible */
+tr[data-state="expanded"][data-has-children="1"].note-expanded + tr.note-row table.note-table td:nth-of-type(4) {
+    padding-bottom: 5px;
+}
+/* Set last child padding on the note when it is visible, last-child class is set through JS */
+tr.note-row.last-child table.note-table td:nth-of-type(4) {
+    padding-bottom: 5px;
+}
+
+
+
+td.label {
+    padding-top: 0px;
+    padding-left: 2px;
+    padding-right: 3px;
+}
+td.label:empty {
+    vertical-align: inherit;
+}
+img.parent {
+    padding-right: 3px;
+}
+img.leaf {
+    padding-right: 5px;
+}
+/* End padding values */
+
+
+
+tr.note-row td.note {
+    /* padding-left: 5px;
+    padding-right: 3px; */ 
+    border: none;
+color: rgb(163,176,176);
+    
+}
+tr.note-row td.note-bg {
+
+}
+table.whole-row, table.whole-note, table#column-header, div.temp-wrapper {
+width: 462px;
+
+}
+/******************
+Column widths and styles, including background. Also applies to column titles. Skip tr.note-row for the outline column.
+These fold in any named styles applied to columns so any manual changes to named styles will also need to be done here
+*******************/
+/* When notes are set to span columns, need to override column widths */
+div#centered table.span-columns {
+    width: 100%;
+    max-width: 100%;
+}
+/* Column widths + backgrounds */
+table.outline-column { 
+    width: 462px; 
+    max-width: 462px; 
+}
+tr#header td:nth-of-type(1), tr.outline-row > td:nth-of-type(1) { 
+    width: 462px; 
+    max-width: 462px; 
+    
+}
+
+/* Column styles but not background. Separate from above because this doesn't apply to column titles. Skip tr.note-row for the outline column. */
+tr.outline-row > td:nth-of-type(1), tr.note-row > td:nth-of-type(1){ 
+    
+}
+tr.outline-row > td:nth-of-type(1) { 
+    
+}
+
+
+/* Column header style */
+
+tr#header div > div > div {
+padding-bottom: 2px;
+
+}
+tr#header > td > div > div {
+    
+}
+
+
+/* Level Styles */
+/*****************
+Level# styles – Does not include background colors. Applied to both nested outline column table and divs in non-nested row cells. Applied to row label cell of note rows.
+Level# background color – Applied to both div holding nested outline column table and divs in non-nested row cells
+Level# gutter color – Only applied to nested table for outline column
+******************/
+/* Level 1 styles */
+tr.outline-row.level-1 td, tr.outline-row.level-1 div > div, tr.note-row.level-1 table.note-table td:nth-of-type(3) { 
+    color: rgb(194,153,0);
+    font-weight: 300;
+    font-size: 28px;
+    
+}
+/* Level 1 background color */
+tr.level-1 > td > div.alt-row-layer > div, tr.level-1.note-row > td > div { 
+    
+}
+/* Level 1 gutter color */
+tr.outline-row.level-1 table.outline-column td:not(:last-of-type) { 
+    
+}
+/* Level 2 styles */
+tr.outline-row.level-2 td, tr.outline-row.level-2 div > div, tr.note-row.level-2 table.note-table td:nth-of-type(3) { 
+    color: rgb(194,153,0);
+    font-weight: 400;
+    font-size: 20px;
+    
+}
+/* Level 2 background color */
+tr.level-2 > td > div.alt-row-layer > div, tr.level-2.note-row > td > div { 
+    
+}
+/* Level 2 gutter color */
+tr.outline-row.level-2 table.outline-column td:not(:last-of-type) { 
+    
+}
+/* Level 3 styles */
+tr.outline-row.level-3 td, tr.outline-row.level-3 div > div, tr.note-row.level-3 table.note-table td:nth-of-type(3) { 
+    color: rgb(194,153,0);
+    
+}
+/* Level 3 background color */
+tr.level-3 > td > div.alt-row-layer > div, tr.level-3.note-row > td > div { 
+    
+}
+/* Level 3 gutter color */
+tr.outline-row.level-3 table.outline-column td:not(:last-of-type) { 
+    
+}
+
+/*********************************************
+Named styles info:
+Padding values are not included here because they are additive and can affect a different row than the one that has the attribute
+*********************************************/
+/* Named Styles */
+div#centered tr td .ns-pEuyXj84FqX-, .ns-pEuyXj84FqX-, div#centered .ns-pEuyXj84FqX- div { 
+    color: rgb(106,129,136);
+    font-weight: 700;
+    
+}
+div#centered tr td .ns-oNjvfB6_IzG-, .ns-oNjvfB6_IzG-, div#centered .ns-oNjvfB6_IzG- div { 
+    
+}
+div#centered tr td .ns-jmMHkfmYZ1M-, .ns-jmMHkfmYZ1M-, div#centered .ns-jmMHkfmYZ1M- div { 
+    color: rgb(194,153,0);
+    
+}
+div#centered tr td .ns-a0st9oz2FO1-, .ns-a0st9oz2FO1-, div#centered .ns-a0st9oz2FO1- div { 
+    color: rgb(214,96,26);
+    
+}
+div#centered tr td .ns-n7Lfd4MM7uE-, .ns-n7Lfd4MM7uE-, div#centered .ns-n7Lfd4MM7uE- div { 
+    color: rgb(229,73,60);
+    
+}
+div#centered tr td .ns-aeYpF7M08yK-, .ns-aeYpF7M08yK-, div#centered .ns-aeYpF7M08yK- div { 
+    color: rgb(221,80,148);
+    
+}
+div#centered tr td .ns-fyki-wDjq0--, .ns-fyki-wDjq0--, div#centered .ns-fyki-wDjq0-- div { 
+    color: rgb(127,135,207);
+    
+}
+div#centered tr td .ns-hAkuUjwYLH4-, .ns-hAkuUjwYLH4-, div#centered .ns-hAkuUjwYLH4- div { 
+    color: rgb(44,157,218);
+    
+}
+div#centered tr td .ns-eF5w5ahSfcU-, .ns-eF5w5ahSfcU-, div#centered .ns-eF5w5ahSfcU- div { 
+    color: rgb(47,174,168);
+    
+}
+div#centered tr td .ns-kH8JuFLRG40-, .ns-kH8JuFLRG40-, div#centered .ns-kH8JuFLRG40- div { 
+    color: rgb(150,166,0);
+    
+}
+
+/* Named Styles Backgroud Colors */
+div#centered tr td .ns-bg-pEuyXj84FqX-, .ns-bg-pEuyXj84FqX- { 
+    
+}
+div#centered tr td .ns-bg-oNjvfB6_IzG-, .ns-bg-oNjvfB6_IzG- { 
+    background-color: rgb(241,236,220);
+    
+}
+div#centered tr td .ns-bg-jmMHkfmYZ1M-, .ns-bg-jmMHkfmYZ1M- { 
+    
+}
+div#centered tr td .ns-bg-a0st9oz2FO1-, .ns-bg-a0st9oz2FO1- { 
+    
+}
+div#centered tr td .ns-bg-n7Lfd4MM7uE-, .ns-bg-n7Lfd4MM7uE- { 
+    
+}
+div#centered tr td .ns-bg-aeYpF7M08yK-, .ns-bg-aeYpF7M08yK- { 
+    
+}
+div#centered tr td .ns-bg-fyki-wDjq0--, .ns-bg-fyki-wDjq0-- { 
+    
+}
+div#centered tr td .ns-bg-hAkuUjwYLH4-, .ns-bg-hAkuUjwYLH4- { 
+    
+}
+div#centered tr td .ns-bg-eF5w5ahSfcU-, .ns-bg-eF5w5ahSfcU- { 
+    
+}
+div#centered tr td .ns-bg-kH8JuFLRG40-, .ns-bg-kH8JuFLRG40- { 
+    
+}
+
+/* Named Styles Gutter Colors */
+div#centered tr td .ns-gutter-pEuyXj84FqX-, .ns-gutter-pEuyXj84FqX- { 
+    
+}
+div#centered tr td .ns-gutter-oNjvfB6_IzG-, .ns-gutter-oNjvfB6_IzG- { 
+    
+}
+div#centered tr td .ns-gutter-jmMHkfmYZ1M-, .ns-gutter-jmMHkfmYZ1M- { 
+    
+}
+div#centered tr td .ns-gutter-a0st9oz2FO1-, .ns-gutter-a0st9oz2FO1- { 
+    
+}
+div#centered tr td .ns-gutter-n7Lfd4MM7uE-, .ns-gutter-n7Lfd4MM7uE- { 
+    
+}
+div#centered tr td .ns-gutter-aeYpF7M08yK-, .ns-gutter-aeYpF7M08yK- { 
+    
+}
+div#centered tr td .ns-gutter-fyki-wDjq0--, .ns-gutter-fyki-wDjq0-- { 
+    
+}
+div#centered tr td .ns-gutter-hAkuUjwYLH4-, .ns-gutter-hAkuUjwYLH4- { 
+    
+}
+div#centered tr td .ns-gutter-eF5w5ahSfcU-, .ns-gutter-eF5w5ahSfcU- { 
+    
+}
+div#centered tr td .ns-gutter-kH8JuFLRG40-, .ns-gutter-kH8JuFLRG40- { 
+    
+}
