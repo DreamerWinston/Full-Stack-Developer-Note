@@ -317,7 +317,7 @@ tr.note-row td.note-bg {
 
 }
 table.whole-row, table.whole-note, table#column-header, div.temp-wrapper {
-width: 462px;
+width: 482px;
 
 }
 /******************
@@ -330,11 +330,15 @@ div#centered table.span-columns {
     max-width: 100%;
 }
 /* Column widths + backgrounds */
+tr#header td:nth-of-type(1), tr.outline-row > td:nth-of-type(1), tr.note-row > td:nth-of-type(1) { 
+    width: 20px; 
+    max-width: 20px; 
+}
 table.outline-column { 
     width: 462px; 
     max-width: 462px; 
 }
-tr#header td:nth-of-type(1), tr.outline-row > td:nth-of-type(1) { 
+tr#header td:nth-of-type(2), tr.outline-row > td:nth-of-type(2) { 
     width: 462px; 
     max-width: 462px; 
     
@@ -344,7 +348,7 @@ tr#header td:nth-of-type(1), tr.outline-row > td:nth-of-type(1) {
 tr.outline-row > td:nth-of-type(1), tr.note-row > td:nth-of-type(1){ 
     
 }
-tr.outline-row > td:nth-of-type(1) { 
+tr.outline-row > td:nth-of-type(2) { 
     
 }
 
