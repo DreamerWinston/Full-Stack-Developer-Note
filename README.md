@@ -590,12 +590,4 @@
 		- Apache
 		- MAMP & WAMP & LAMP
 		* 自我总结
-	* 如何优雅的进行前端开发
-	* HTML读书笔记
-	* HTML5 Programming读书笔记
-	* PHP & MySQL 读书笔记
-	* HTTP协议 读书笔记
-	* HTML5 &CSS3 权威指南 读书笔记
-	* 本地服务器搭建
-	- 环境配置
-	* 常见错误以及专业词汇
+	
