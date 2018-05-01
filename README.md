@@ -585,11 +585,4 @@
 			* Laravel (PHP框架)
 			- 个人博客 HEXO
 			* Java后台
-		* HTML & CSS ===> HTML5 & CSS3
-		- JavaScript
-		- PHP
-		- MySQL
-		- Apache
-		- MAMP & WAMP & LAMP
-		* 自我总结
 	
